@@ -1,6 +1,4 @@
-(in-package :chapter-1)
-
-;; Section 1
+(in-package :sicp-cl)
 
 (defun exercise-1 ()
   '(10 12 8 3 -16 3 4 19 nil 3 16 6 16))
