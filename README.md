@@ -1,9 +1,8 @@
-# sicp-cl
-### _Your Name <your.name@example.com>_
+# Common Lisp Solutions to SICP (Structure & Interpretation of Programs)
+### _Anish Moorthy_
 
-This is a project to do ... something.
+SICP is pretty cool, and so is Common Lisp! Why not put them together?
 
-## License
+I might not be able to complete all of the exercises, but we'll see how it goes
 
-Specify license here
-
+Depends on my personal set of CL utilities, [volt](https://github.com/anlsh/volt)
