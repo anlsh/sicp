@@ -51,3 +51,24 @@ to improve guess forever")
     (let ((big-number (expt 10 10))) (- big-number (square (sqrt (- big-number .01)))))
     ;; Not gonna do this last part
     ))
+
+(defun exercise-9 ()
+  (format t "The first is a recursive process while the second is an iterative one"))
+
+(defun ackermann (x y) (cond ((= y 0) 0)
+                             ((= x 0) (* 2 y))
+                             ((= y 1) 2)
+                             (t (ackermann (1- x) (ackermann x (1- y))))))
+
+(defun exercise-10 ()
+  ;; DONE
+  (format t "(A 1 10): ~a~%" (ackermann 1 10))
+  (format t "(A 2 4): ~a~%" (ackermann 2 4))
+  (format t "(A 3 3): ~a~%" (ackermann 3 3))
+  (format t "(A 0 n) = 2y~%")
+  (format t "(A 1 n) = 2^n")
+  (format t "(A 2 n) = (2 ^ 2 ^ ... ^ 2) where the stack in n long"))
+
+(defun exercise-16 (base pow &optional (accumulator 1))
+  ;; TODO Haven't done this :9
+  )
