@@ -32,7 +32,7 @@
                   (error "Nonexistent type")))
               arg-types)
       (put-if-absent (name {}) generic-defs)
-      (sethash arg-types (eval `(lambda ,arg-names ,@body)) (gethash name generic-defs))))
+      (sethash (arg-types (eval `(lambda ,arg-names ,@body))) (gethash name generic-defs))))
 
   (defun apply-generic (name &rest args)
     (let ((types (mapcar #'get-type args))
