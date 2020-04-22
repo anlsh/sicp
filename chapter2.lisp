@@ -1,5 +1,7 @@
 ;; Exercise 1
 
+(in-package :sicp-cl)
+
 (define-type :int-ends)
 
 (defun make-rat (n d)
@@ -19,4 +21,5 @@
   (car x))
 
 (define-generic upper-bound ((:int-ends x))
-  (car x))
+  (cdr x))
+
