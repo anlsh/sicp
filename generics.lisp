@@ -26,7 +26,7 @@
 
     (defmacro define-generic (name argspecs &body body)
 
-      (put-if-absent (name {}) generic-defs)
+      (put-if-absent name {} generic-defs)
 
       (destructuring-bind
           (arg-types arg-names)
