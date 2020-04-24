@@ -1,0 +1,5 @@
+(let ((l1 (list 1 2 3))
+      (l2 (list 4 5 6)))
+  (print (append l1 l2))
+  (print l1)
+  (print l2))
