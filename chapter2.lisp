@@ -2,19 +2,7 @@
 
 (in-package :sicp-cl)
 
-
-;; Exercise 1
-
-(define-type :rat)
-(defun make-rat (n d)
-  (let* ((gcd (gcd (abs n) (abs d)))
-         (num (abs (/ n gcd)))
-         (dnom (abs (/ d gcd))))
-    (construct :rat
-               (cond ((> (* n d) 0) (cons num dnom))
-                     (t (cons (* -1 num) dnom))))))
-
-;; Exercise 2
+;; Exercise 2.2
 
 (labels ((make (x y) (cons x y))
          (+point-x (p) (car p))
@@ -40,6 +28,28 @@
     (+seg-p1 p))
   (define-generic seg-p2 ((:point p))
     (+seg-p2 p)))
+
+;; Exercise 3
+
+(labels ((make (p1 p2) (cons p1 p2))
+         (+width (r) (abs (- (point-x (car r)) (point-x (cdr r)))))
+         (+height (r) (abs (- (point-y (car r)) (point-y (cdr r))))))
+  (define-type :rect-two-point)
+  (defun make-two-point-ret (p1 p2)
+    (construct :rect-two-point (make p1 p2)))
+  (define-generic width ((:rect-two-point r)) (+width r))
+  (define-generic height ((:rect-two-point r)) (+height r))
+  (define-generic area ((:rect-two-point r)) (* (+width r) (+height r))))
+
+(labels ((make (p1 p2) (cons p1 p2))
+         (+width (r) (abs (- (point-x (car r)) (point-x (cdr r)))))
+         (+height (r) (abs (- (point-y (car r)) (point-y (cdr r))))))
+  (define-type :rect-two-point)
+  (defun make-two-point-ret (p1 p2)
+    (construct :rect-two-point (make p1 p2)))
+  (define-generic width ((:rect-two-point r)) (+width r))
+  (define-generic height ((:rect-two-point r)) (+height r))
+  (define-generic area ((:rect-two-point r)) (* (+width r) (+height r))))
 
 ;; Complex Numbers
 
