@@ -1,0 +1,6 @@
+(defun fringe (tree)
+  (labels ((rec (tree iscar)
+             (cond ((null tree) (if iscar (list nil) nil))
+                   ((atom tree) (list tree))
+                   (t (append (rec (car tree) t) (rec (cdr tree) nil))))))
+    (rec tree nil)))
